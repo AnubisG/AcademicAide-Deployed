@@ -1,0 +1,157 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Worksheets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Description</th>
+      <th>Worksheet name</th>
+      <th>Suggested grade</th>
+      <th>Arithmetic</th>
+      <th>Addition</th>
+      <th>Subtraction</th>
+      <th>Multiplication</th>
+      <th>Division</th>
+      <th>Long division</th>
+      <th>Reading</th>
+      <th>Trick question</th>
+      <th>Multiple choices</th>
+      <th>Multiple choice answer</th>
+      <th>Word problem</th>
+      <th>Word problem solution equation</th>
+      <th>Integer</th>
+      <th>Decimal</th>
+      <th>Number of decimals</th>
+      <th>Fraction</th>
+      <th>Fraction to decimal</th>
+      <th>Decimal to fraction</th>
+      <th>Significant digits</th>
+      <th>Scientific notation</th>
+      <th>Parenthesis</th>
+      <th>Exponent</th>
+      <th>Roots</th>
+      <th>Square root</th>
+      <th>Cube root</th>
+      <th>Factoring</th>
+      <th>Foil</th>
+      <th>Variables</th>
+      <th>Number of variables</th>
+      <th>Imaginary number</th>
+      <th>Degree</th>
+      <th>Radian</th>
+      <th>Trigonometry</th>
+      <th>Sin</th>
+      <th>Cos</th>
+      <th>Tan</th>
+      <th>Csc</th>
+      <th>Sec</th>
+      <th>Cot</th>
+      <th>Arcsin</th>
+      <th>Arccos</th>
+      <th>Arctan</th>
+      <th>Arccsc</th>
+      <th>Arcsec</th>
+      <th>Arccot</th>
+      <th>Simple shapes area</th>
+      <th>Simple shapes circumference</th>
+      <th>Simple shapes volume</th>
+      <th>Combination shapes area</th>
+      <th>Combination shapes circumference</th>
+      <th>Combination shapes volume</th>
+      <th>Ratios</th>
+      <th>Functions</th>
+      <th>Equation</th>
+      <th>Inequality</th>
+      <th>Plotting</th>
+      <th>Graph</th>
+      <th>Slope</th>
+      <th>Upper bound</th>
+      <th>Lower bound</th>
+      <th>Questions</th>
+      <th>Answers</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @worksheets.each do |worksheet| %>
+      <tr>
+        <td><%= worksheet.author %></td>
+        <td><%= worksheet.description %></td>
+        <td><%= worksheet.worksheet_name %></td>
+        <td><%= worksheet.suggested_grade %></td>
+        <td><%= worksheet.arithmetic %></td>
+        <td><%= worksheet.addition %></td>
+        <td><%= worksheet.subtraction %></td>
+        <td><%= worksheet.multiplication %></td>
+        <td><%= worksheet.division %></td>
+        <td><%= worksheet.long_division %></td>
+        <td><%= worksheet.reading %></td>
+        <td><%= worksheet.trick_question %></td>
+        <td><%= worksheet.multiple_choices %></td>
+        <td><%= worksheet.multiple_choice_answer %></td>
+        <td><%= worksheet.word_problem %></td>
+        <td><%= worksheet.word_problem_solution_equation %></td>
+        <td><%= worksheet.integer %></td>
+        <td><%= worksheet.decimal %></td>
+        <td><%= worksheet.number_of_decimals %></td>
+        <td><%= worksheet.fraction %></td>
+        <td><%= worksheet.fraction_to_decimal %></td>
+        <td><%= worksheet.decimal_to_fraction %></td>
+        <td><%= worksheet.significant_digits %></td>
+        <td><%= worksheet.scientific_notation %></td>
+        <td><%= worksheet.parenthesis %></td>
+        <td><%= worksheet.exponent %></td>
+        <td><%= worksheet.roots %></td>
+        <td><%= worksheet.square_root %></td>
+        <td><%= worksheet.cube_root %></td>
+        <td><%= worksheet.factoring %></td>
+        <td><%= worksheet.foil %></td>
+        <td><%= worksheet.variables %></td>
+        <td><%= worksheet.number_of_variables %></td>
+        <td><%= worksheet.imaginary_number %></td>
+        <td><%= worksheet.degree %></td>
+        <td><%= worksheet.radian %></td>
+        <td><%= worksheet.trigonometry %></td>
+        <td><%= worksheet.sin %></td>
+        <td><%= worksheet.cos %></td>
+        <td><%= worksheet.tan %></td>
+        <td><%= worksheet.csc %></td>
+        <td><%= worksheet.sec %></td>
+        <td><%= worksheet.cot %></td>
+        <td><%= worksheet.arcsin %></td>
+        <td><%= worksheet.arccos %></td>
+        <td><%= worksheet.arctan %></td>
+        <td><%= worksheet.arccsc %></td>
+        <td><%= worksheet.arcsec %></td>
+        <td><%= worksheet.arccot %></td>
+        <td><%= worksheet.simple_shapes_area %></td>
+        <td><%= worksheet.simple_shapes_circumference %></td>
+        <td><%= worksheet.simple_shapes_volume %></td>
+        <td><%= worksheet.combination_shapes_area %></td>
+        <td><%= worksheet.combination_shapes_circumference %></td>
+        <td><%= worksheet.combination_shapes_volume %></td>
+        <td><%= worksheet.ratios %></td>
+        <td><%= worksheet.functions %></td>
+        <td><%= worksheet.equation %></td>
+        <td><%= worksheet.inequality %></td>
+        <td><%= worksheet.plotting %></td>
+        <td><%= worksheet.graph %></td>
+        <td><%= worksheet.slope %></td>
+        <td><%= worksheet.upper_bound %></td>
+        <td><%= worksheet.lower_bound %></td>
+        <td><%= worksheet.questions %></td>
+        <td><%= worksheet.answers %></td>
+        <td><%= link_to 'Show', worksheet %></td>
+        <td><%= link_to 'Edit', edit_worksheet_path(worksheet) %></td>
+        <td><%= link_to 'Destroy', worksheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Worksheet', new_worksheet_path %>

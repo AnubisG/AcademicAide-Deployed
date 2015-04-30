@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Worksheet:</strong>
+  <%= @hw_record.worksheet %>
+</p>
+
+<p>
+  <strong>Questions:</strong>
+  <%= @hw_record.questions %>
+</p>
+
+<p>
+  <strong>Student answers:</strong>
+  <%= @hw_record.student_answers %>
+</p>
+
+<p>
+  <strong>Students name:</strong>
+  <%= @hw_record.students_name %>
+</p>
+
+<p>
+  <strong>Completeness:</strong>
+  <%= @hw_record.completeness %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @hw_record.grade %>
+</p>
+
+<p>
+  <strong>Grader comments:</strong>
+  <%= @hw_record.grader_comments %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @hw_record.class_id %>
+</p>
+
+<%= link_to 'Edit', edit_hw_record_path(@hw_record) %> |
+<%= link_to 'Back', hw_records_path %>

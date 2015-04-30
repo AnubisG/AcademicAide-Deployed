@@ -1,0 +1,33 @@
+<%= form_for(@curriculum) do |f| %>
+  <% if @curriculum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@curriculum.errors.count, "error") %> prohibited this curriculum from being saved:</h2>
+
+      <ul>
+      <% @curriculum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :course_description %><br>
+    <%= f.text_area :course_description %>
+  </div>
+  <div class="field">
+    <%= f.label :syllabus %><br>
+    <%= f.text_area :syllabus %>
+  </div>
+  <div class="field">
+    <%= f.label :worksheets %><br>
+    <%= f.text_area :worksheets %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

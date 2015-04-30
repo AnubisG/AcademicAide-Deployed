@@ -1,0 +1,2 @@
+module HwRecordsHelper
+end

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Hw Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Worksheet</th>
+      <th>Questions</th>
+      <th>Student answers</th>
+      <th>Students name</th>
+      <th>Completeness</th>
+      <th>Grade</th>
+      <th>Grader comments</th>
+      <th>Class</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hw_records.each do |hw_record| %>
+      <tr>
+        <td><%= hw_record.worksheet %></td>
+        <td><%= hw_record.questions %></td>
+        <td><%= hw_record.student_answers %></td>
+        <td><%= hw_record.students_name %></td>
+        <td><%= hw_record.completeness %></td>
+        <td><%= hw_record.grade %></td>
+        <td><%= hw_record.grader_comments %></td>
+        <td><%= hw_record.class_id %></td>
+        <td><%= link_to 'Show', hw_record %></td>
+        <td><%= link_to 'Edit', edit_hw_record_path(hw_record) %></td>
+        <td><%= link_to 'Destroy', hw_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hw record', new_hw_record_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  course_description: MyText
+  syllabus: MyText
+  worksheets: MyText
+
+two:
+  author: MyString
+  course_description: MyText
+  syllabus: MyText
+  worksheets: MyText

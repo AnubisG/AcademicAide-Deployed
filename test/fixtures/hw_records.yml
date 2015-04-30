@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worksheet: MyString
+  questions: MyText
+  student_answers: MyText
+  students_name: MyString
+  completeness: MyString
+  grade: MyString
+  grader_comments: MyText
+  class_id: MyString
+
+two:
+  worksheet: MyString
+  questions: MyText
+  student_answers: MyText
+  students_name: MyString
+  completeness: MyString
+  grade: MyString
+  grader_comments: MyText
+  class_id: MyString

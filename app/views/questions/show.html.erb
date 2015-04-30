@@ -1,0 +1,88 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @question.author %>
+</p>
+
+<p>
+  <strong>Suggested grade:</strong>
+  <%= @question.suggested_grade %>
+</p>
+
+<p>
+  <strong>Specialized:</strong>
+  <%= @question.specialized %>
+</p>
+
+<p>
+  <strong>Short Description:</strong>
+  <%= @question.short_description %>
+</p>
+
+<p>
+  <strong>The question:</strong>
+  <div>$$<%= @question.the_question %>$$</div>
+</p>
+<% if @question.author == current_user.username %>
+<p>
+  <strong>Author Answer:</strong>
+  <%= @question.answer %>
+</p>
+<% end %>
+<p>
+	<strong>Processed Question</strong><br />
+	<input type="text" id="question" value=<%= @question.the_question %> />
+</p>
+<p>
+	<strong>Math.js Answer</strong>
+	<div id="answer"></div>
+</p>
+
+
+
+<h3>Comments</h3>
+<% @question.question_comments.reverse.each do |question_comment| %>
+	<p><%= question_comment.author %> says <br><%= question_comment.text %></p>
+	
+	<p><%= time_ago_in_words question_comment.created_at %> ago</p>
+<%end%>
+
+<%= form_for [@question, @question.question_comments.build] do |f|%>
+	<!--
+	<p><%= f.text_area :text, :size => '40x10', :value => current_user.username+' says: ' %></p>
+	-->
+	<p><%= f.text_field :author, :value => current_user.username, :readonly => true%>
+	<p><%= f.text_area :text, :size => '40x10' %></p>
+	<p><%= f.submit 'Post Comment'%></p>
+<%end%>
+
+<script>
+	var expr = document.getElementById('question'),
+		result = document.getElementById('answer');
+
+	// initialize with an example expression
+	result.innerHTML = math.eval(expr.value);
+	
+	expr.oninput = function () 
+	{
+		var node = null;
+		
+		try 
+		{
+		// parse the expression
+		node = math.parse(expr.value);
+		
+		// evaluate the result of the expression
+		result.innerHTML = node.compile(math).eval();
+		}
+		catch (err) 
+		{
+		result.innerHTML = '<span style="color: red;">' + err.toString() + '</span>';
+  		}
+	};
+</script>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+
+<%= link_to 'Back', questions_path %>

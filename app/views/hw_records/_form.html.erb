@@ -1,0 +1,49 @@
+<%= form_for(@hw_record) do |f| %>
+  <% if @hw_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hw_record.errors.count, "error") %> prohibited this hw_record from being saved:</h2>
+
+      <ul>
+      <% @hw_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :worksheet %><br>
+    <%= f.text_field :worksheet %>
+  </div>
+  <div class="field">
+    <%= f.label :questions %><br>
+    <%= f.text_area :questions %>
+  </div>
+  <div class="field">
+    <%= f.label :student_answers %><br>
+    <%= f.text_area :student_answers %>
+  </div>
+  <div class="field">
+    <%= f.label :students_name %><br>
+    <%= f.text_field :students_name %>
+  </div>
+  <div class="field">
+    <%= f.label :completeness %><br>
+    <%= f.text_field :completeness %>
+  </div>
+  <div class="field">
+    <%= f.label :grade %><br>
+    <%= f.text_field :grade %>
+  </div>
+  <div class="field">
+    <%= f.label :grader_comments %><br>
+    <%= f.text_area :grader_comments %>
+  </div>
+  <div class="field">
+    <%= f.label :class_id %><br>
+    <%= f.text_field :class_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,36 @@
+
+
+<div class=container>
+	<div class="left">
+		<div class="hover" id="learn" >Learn</div><br>
+		<div class="sub" id="hidden_learn">Practice makes perfect. This is the technique that is implemented here at Academic Aide where the practice problems are limitless!</div>
+		<div class="hover" id="create">Create</div><br>
+		<div class="sub" id="hidden_create">Use our simple and interactive problem creator to make your very own mathematical problems!</div>
+		<div class="hover" id="share">Share</div><br>
+		<div class="sub" id="hidden_share">Test your students knowledge or even make worksheets for yourself to practice with!</div>
+	</div>
+	
+	<div class="right">
+		<div class="box right" id="login">
+			<p style="margin:20px 1px 25px 1px;font-size:25px;font-family:Fraktur, serif;">Enter your Log In information: </p>
+			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				<div>E-mail: <%= f.email_field :email, autofocus: true%></div>
+				
+				<div style="margin-top:5px;margin-bottom: 10px;">Password: <%= f.password_field :password, autocomplete: "off" %></div>
+				
+				<% if devise_mapping.rememberable? -%>
+					<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+				<% end -%>
+				<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+				  <font size="4"><%= link_to "Forgot your password?", new_password_path(resource_name)%></font>
+				<% end -%>
+				
+				<div><%= f.submit "Log in", :class => 'buttonTo' %></div>
+			<% end %>
+		</div>
+		<div class="right" id="or"> -OR- </div>
+		<div class="right" id="sign-up">
+				<%= button_to "Sign Up", new_user_registration_path, :class => "buttonTo", :method => :get  %>
+			</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Curriculums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Course description</th>
+      <th>Syllabus</th>
+      <th>Worksheets</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @curriculums.each do |curriculum| %>
+      <tr>
+        <td><%= curriculum.author %></td>
+        <td><%= curriculum.course_description %></td>
+        <td><%= curriculum.syllabus %></td>
+        <td><%= curriculum.worksheets %></td>
+        <td><%= link_to 'Show', curriculum %></td>
+        <td><%= link_to 'Edit', edit_curriculum_path(curriculum) %></td>
+        <td><%= link_to 'Destroy', curriculum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Curriculum', new_curriculum_path %>

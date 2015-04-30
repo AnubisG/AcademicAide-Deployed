@@ -1,0 +1,407 @@
+﻿/*This is the top bar...change as necessary depending on which page you are on*/
+body{
+	min-width: 1100px;
+}
+.header{
+	border: 1px solid black;
+	height: 50px;
+	background-color: black;
+	position: static;
+}
+.navBar{
+	/*Text*/
+	text-align: center;
+	font-family: Fraktur, serif;
+	font-size: 25px;
+	font-style: italic;
+	color: #DC143C;
+	cursor: default;
+
+	/*Box*/
+    border: 1px solid black;
+	border-radius: 5px;
+    background-color: white;
+    box-shadow: none;
+
+	/*Positioning*/
+	padding: 5px 30px 5px 30px;
+	position: relative;
+	float: left;
+	margin: 10px;
+}
+#logo{
+	color: white;
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	display: inline-block;
+	border: none;
+	padding: 10px 40px 10px 40px;
+}
+#explore, #about-us{
+	padding: 10px 40px 10px 40px;
+}
+#logo:hover{
+	border-color:#DC143C;
+	box-shadow: 5px 5px 5px white;
+}
+#explore:hover{
+	color: white;
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	border-color:#DC143C;
+}
+#about-us:hover{
+	color: white;
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	border-color:#DC143C;
+}
+#search-bar{
+	margin-right: -3px;
+	cursor: text;
+}
+#search-button{
+	margin-left: -3px;
+	margin-right: 0;
+}
+#search-button:hover{
+	color: white;
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	border-color:#DC143C;
+}
+.signOut {
+	font-size:25px;
+	font-family: Fraktur, serif;
+	
+	
+	margin-top: 10px;
+	margin-right: 25px;
+	float: right;
+	
+	border: 1px solid black;
+	border-radius: 4px;
+    background-color: white;
+    box-shadow: none;
+    padding: 7px 15px 7px 15px;
+}
+.signOut:hover{
+	background-color: #DC143C;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*Splits into right and left sides*/
+.container{
+	position:relative;
+	padding:  0 0 0 55px;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*This is the words on the left side of the page*/
+.left {
+	width: 400px;
+	z-index: 1;
+	margin-left: 150px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+#learn{
+	margin-top: 25px;
+}
+#hidden_learn, #hidden_create, #hidden_share
+{
+	font-family: Arial, Fraktur, serif;
+	font-size: 20px;
+	color: black;
+	cursor: default;
+	padding: 5px;
+	margin-left:20px;
+	margin-bottom: 30px;
+	display:none;
+}
+.hover{
+	/*Box*/
+	background-color: white;
+	box-shadow: 5px 5px 5px white;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding-top: 17px;
+	padding-bottom: 17px;
+
+	/*Text*/
+	text-align: center;
+	font-family: Fraktur, serif;
+	font-size: 50px;
+	font-style: italic;
+	color: black;
+	cursor: default;
+}
+#learn:hover{
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	border-color:#DC143C;
+}
+#create:hover{
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	border-color:#DC143C;
+}
+#share:hover{
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	border-color:#DC143C;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*This is the right side of the page*/
+
+.right{
+	/*Position*/
+	width: 400px;
+	margin-left:300px;
+
+	/*Text*/
+	text-align: center;
+	font-family: Fraktur, serif;
+	font-size: 25px;
+	font-style: italic;
+	color: black;
+	cursor: default;
+}
+
+#login{
+	margin-top: 125px;
+	width: 400px;
+}
+#or{
+	margin-top:50px;
+	width: 400px;
+}
+#sign-up{
+	margin-top:50px;
+}
+#button{
+	font-family: Fraktur, serif;
+	font-size: 25px;
+	font-style: italic;
+	color: black;
+	width: 400px;
+	height: 50px
+}
+.box{
+	background-color: white;
+	box-shadow: 5px 5px 5px white;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*aboutUsPage Specifics*/
+#contents{
+	margin-left: 150px;
+	margin-top: 100px;
+}
+.contents{
+	font-family: Fraktur, serif;
+	cursor: default;
+}
+.answer{
+	width: 915px;
+	margin-left: 35px;
+	margin-bottom: 50px;
+	font-style: none;
+	font-size: 22px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*sign_up Specifics*/
+.userinfo{
+	/*Position*/
+	margin-top: 25px;
+	margin-bottom: 0px;
+	margin-left: 251px;
+	width: 550px;
+	min-width: 200px;
+	clear:both;
+	float:left;
+
+	/*Text*/
+	text-align: left;
+	font-family: Fraktur, serif;
+	font-size: 20px;
+	font-style: italic;
+	color: black;
+	cursor: default;
+	
+	border: 10px ridge #DC143C;
+	border-radius:  25px;
+}
+div #title{
+	font-size: 50px;
+	text-decoration: underline;
+	margin-left: 30px;
+}
+div #instructions{
+	width: 700px;
+	margin-left: 50px;
+	font-size: 25px;
+}
+.user_input{
+	text-indent: 50px;
+}
+#password_restrictions{
+	font-size: 15px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #DC143C;
+}
+div #submit{
+	/*Text*/
+	text-align: center;
+	font-family: Fraktur, serif;
+	font-size: 25px;
+	font-style: italic;
+	color: #DC143C;
+	cursor: default;
+
+	/*Box*/
+    border: 1px solid black;
+	border-radius: 5px;
+    background-color: white;
+    box-shadow: none;
+
+	/*Positioning*/
+	padding: 5px 5px 5px 5px;
+	position: relative;
+	float: left;
+	margin: 10px;
+	margin-left: 145px;
+}
+div #submit:hover{
+	color: white;
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+}
+div #email_taken{
+	color: #DC143C;
+	opacity: .3;
+}
+div #faulty_password{
+	color: #DC143C;
+	opacity: .3;
+}
+
+.buttonTo{
+	/*Text*/
+	font-family: Fraktur, serif;
+	font-size: 25px;
+	font-style: italic;
+	color: red;
+	
+	/*Box*/
+	margin-top: 20px;
+	background-color: white;
+	border-radius: 5px;
+	width: 400px;
+	height: 50px;
+}
+.buttonTo:hover{
+	background-color: #DC143C;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------- */
+/*DashBoard Specifics*/
+#bc, #bw, #bp, #yc, #yw, #yp, #pc, #pw, #pp{
+	font-size: 30px;
+	/*Box*/
+	background-color: white;
+	box-shadow: 5px 5px 5px white;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding-top: 17px;
+	padding-bottom: 17px;
+}
+#bc, #bw, #yc, #yw, #pc, #pw, #pp{
+	color:gray 
+}
+		
+/*
+#bc:hover, #bw:hover, #bp:hover, #yc:hover, #yw:hover, #yp:hover, #pc:hover, #pw:hover, #pp:hover{
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	border-color:#DC143C;
+}
+*/
+#bp:hover, #yp:hover{
+	background-color: #DC143C;
+	box-shadow: 5px 5px 5px #DC143C;
+	border-color:#DC143C;
+}
+
+.left_d {
+	width: 400px;
+	z-index: 1;
+	margin-left: 150px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+.middle_d{
+	/*Position*/
+	width: 400px;
+	margin-left:500px;
+	position: absolute;
+
+	/*Text*/
+	text-align: center;
+	font-family: Fraktur, serif;
+	font-size: 25px;
+	font-style: italic;
+	color: black;
+	cursor: default;
+}
+.right_d{
+	/*Position*/
+	width: 400px;
+	margin-left:453px;
+
+	/*Text*/
+	text-align: center;
+	font-family: Fraktur, serif;
+	font-size: 25px;
+	font-style: italic;
+	color: black;
+	cursor: default;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*Footer Specifics*/
+.footer{
+	font-family: Fraktur, serif;
+	font-size: 15px;
+	font-style: italic;
+	cursor: default;
+	text-align: center;
+	
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer a{
+	color: gray;
+	display: inline-block;
+	margin-left:25px;
+	margin-right:25px;
+	margin-bottom:10px;
+}
+.footer a:hover{
+	background-color: #DC143C;
+}
+hr{
+	margin-top:100px;
+	background-color: #d4d4d4;
+	color: #d4d4d4;
+	height: 1px;
+	border: 0px;
+	clear: both;
+}

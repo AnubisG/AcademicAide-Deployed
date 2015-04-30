@@ -1,0 +1,190 @@
+<!--
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Suggested grade</th>
+      <th>Arithmetic</th>
+      <th>Addition</th>
+      <th>Subtraction</th>
+      <th>Multiplication</th>
+      <th>Division</th>
+      <th>Long division</th>
+      <th>Reading</th>
+      <th>Trick question</th>
+      <th>Multiple choices</th>
+      <th>Multiple choice answer</th>
+      <th>Word problem</th>
+      <th>Word problem solution equation</th>
+      <th>Integer</th>
+      <th>Decimal</th>
+      <th>Number of decimals</th>
+      <th>Fraction</th>
+      <th>Fraction to decimal</th>
+      <th>Decimal to fraction</th>
+      <th>Significant digits</th>
+      <th>Scientific notation</th>
+      <th>Parenthesis</th>
+      <th>Exponent</th>
+      <th>Roots</th>
+      <th>Square root</th>
+      <th>Cube root</th>
+      <th>Factoring</th>
+      <th>Foil</th>
+      <th>Variables</th>
+      <th>Number of variables</th>
+      <th>Imaginary number</th>
+      <th>Degree</th>
+      <th>Radian</th>
+      <th>Trigonometry</th>
+      <th>Sin</th>
+      <th>Cos</th>
+      <th>Tan</th>
+      <th>Csc</th>
+      <th>Sec</th>
+      <th>Cot</th>
+      <th>Arcsin</th>
+      <th>Arccos</th>
+      <th>Arctan</th>
+      <th>Arccsc</th>
+      <th>Arcsec</th>
+      <th>Arccot</th>
+      <th>Simple shapes area</th>
+      <th>Simple shapes circumference</th>
+      <th>Simple shapes volume</th>
+      <th>Combination shapes area</th>
+      <th>Combination shapes circumference</th>
+      <th>Combination shapes volume</th>
+      <th>Ratios</th>
+      <th>Functions</th>
+      <th>Equation</th>
+      <th>Inequality</th>
+      <th>Plotting</th>
+      <th>Graph</th>
+      <th>Slope</th>
+      <th>Upper bound</th>
+      <th>Lower bound</th>
+      <th>Specialized</th>
+      <th>Short description</th>
+      <th>The question</th>
+      <th>Answer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.author %></td>
+        <td><%= question.suggested_grade %></td>
+        <td><%= question.arithmetic %></td>
+        <td><%= question.addition %></td>
+        <td><%= question.subtraction %></td>
+        <td><%= question.multiplication %></td>
+        <td><%= question.division %></td>
+        <td><%= question.long_division %></td>
+        <td><%= question.reading %></td>
+        <td><%= question.trick_question %></td>
+        <td><%= question.multiple_choices %></td>
+        <td><%= question.multiple_choice_answer %></td>
+        <td><%= question.word_problem %></td>
+        <td><%= question.word_problem_solution_equation %></td>
+        <td><%= question.integer %></td>
+        <td><%= question.decimal %></td>
+        <td><%= question.number_of_decimals %></td>
+        <td><%= question.fraction %></td>
+        <td><%= question.fraction_to_decimal %></td>
+        <td><%= question.decimal_to_fraction %></td>
+        <td><%= question.significant_digits %></td>
+        <td><%= question.scientific_notation %></td>
+        <td><%= question.parenthesis %></td>
+        <td><%= question.exponent %></td>
+        <td><%= question.roots %></td>
+        <td><%= question.square_root %></td>
+        <td><%= question.cube_root %></td>
+        <td><%= question.factoring %></td>
+        <td><%= question.foil %></td>
+        <td><%= question.variables %></td>
+        <td><%= question.number_of_variables %></td>
+        <td><%= question.imaginary_number %></td>
+        <td><%= question.degree %></td>
+        <td><%= question.radian %></td>
+        <td><%= question.trigonometry %></td>
+        <td><%= question.sin %></td>
+        <td><%= question.cos %></td>
+        <td><%= question.tan %></td>
+        <td><%= question.csc %></td>
+        <td><%= question.sec %></td>
+        <td><%= question.cot %></td>
+        <td><%= question.arcsin %></td>
+        <td><%= question.arccos %></td>
+        <td><%= question.arctan %></td>
+        <td><%= question.arccsc %></td>
+        <td><%= question.arcsec %></td>
+        <td><%= question.arccot %></td>
+        <td><%= question.simple_shapes_area %></td>
+        <td><%= question.simple_shapes_circumference %></td>
+        <td><%= question.simple_shapes_volume %></td>
+        <td><%= question.combination_shapes_area %></td>
+        <td><%= question.combination_shapes_circumference %></td>
+        <td><%= question.combination_shapes_volume %></td>
+        <td><%= question.ratios %></td>
+        <td><%= question.functions %></td>
+        <td><%= question.equation %></td>
+        <td><%= question.inequality %></td>
+        <td><%= question.plotting %></td>
+        <td><%= question.graph %></td>
+        <td><%= question.slope %></td>
+        <td><%= question.upper_bound %></td>
+        <td><%= question.lower_bound %></td>
+        <td><%= question.specialized %></td>
+        <td><%= question.short_description %></td>
+        <td><%= question.the_question %></td>
+        <td><%= question.answer %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_question_path %>
+-->
+	
+<h1>Listing questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Suggested grade</th>
+      <th>Specialized</th>
+      <th>The question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.author %></td>
+        <td><%= question.suggested_grade %></td>
+        <td>$$<%= question.the_question %>$$</td>
+        <td><%= link_to 'Show', question %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_question_path %>

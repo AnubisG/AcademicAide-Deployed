@@ -1,0 +1,633 @@
+<!--
+<%= form_for(@question) do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :suggested_grade %><br>
+    <%= f.number_field :suggested_grade %>
+  </div>
+  <div class="field">
+    <%= f.label :arithmetic %><br>
+    <%= f.check_box :arithmetic %>
+  </div>
+  <div class="field">
+    <%= f.label :addition %><br>
+    <%= f.check_box :addition %>
+  </div>
+  <div class="field">
+    <%= f.label :subtraction %><br>
+    <%= f.check_box :subtraction %>
+  </div>
+  <div class="field">
+    <%= f.label :multiplication %><br>
+    <%= f.check_box :multiplication %>
+  </div>
+  <div class="field">
+    <%= f.label :division %><br>
+    <%= f.check_box :division %>
+  </div>
+  <div class="field">
+    <%= f.label :long_division %><br>
+    <%= f.check_box :long_division %>
+  </div>
+  <div class="field">
+    <%= f.label :reading %><br>
+    <%= f.check_box :reading %>
+  </div>
+  <div class="field">
+    <%= f.label :trick_question %><br>
+    <%= f.check_box :trick_question %>
+  </div>
+  <div class="field">
+    <%= f.label :multiple_choices %><br>
+    <%= f.check_box :multiple_choices %>
+  </div>
+  <div class="field">
+    <%= f.label :multiple_choice_answer %><br>
+    <%= f.text_field :multiple_choice_answer %>
+  </div>
+  <div class="field">
+    <%= f.label :word_problem %><br>
+    <%= f.check_box :word_problem %>
+  </div>
+  <div class="field">
+    <%= f.label :word_problem_solution_equation %><br>
+    <%= f.text_area :word_problem_solution_equation %>
+  </div>
+  <div class="field">
+    <%= f.label :integer %><br>
+    <%= f.check_box :integer %>
+  </div>
+  <div class="field">
+    <%= f.label :decimal %><br>
+    <%= f.check_box :decimal %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_decimals %><br>
+    <%= f.number_field :number_of_decimals %>
+  </div>
+  <div class="field">
+    <%= f.label :fraction %><br>
+    <%= f.check_box :fraction %>
+  </div>
+  <div class="field">
+    <%= f.label :fraction_to_decimal %><br>
+    <%= f.check_box :fraction_to_decimal %>
+  </div>
+  <div class="field">
+    <%= f.label :decimal_to_fraction %><br>
+    <%= f.check_box :decimal_to_fraction %>
+  </div>
+  <div class="field">
+    <%= f.label :significant_digits %><br>
+    <%= f.number_field :significant_digits %>
+  </div>
+  <div class="field">
+    <%= f.label :scientific_notation %><br>
+    <%= f.check_box :scientific_notation %>
+  </div>
+  <div class="field">
+    <%= f.label :parenthesis %><br>
+    <%= f.check_box :parenthesis %>
+  </div>
+  <div class="field">
+    <%= f.label :exponent %><br>
+    <%= f.check_box :exponent %>
+  </div>
+  <div class="field">
+    <%= f.label :roots %><br>
+    <%= f.check_box :roots %>
+  </div>
+  <div class="field">
+    <%= f.label :square_root %><br>
+    <%= f.check_box :square_root %>
+  </div>
+  <div class="field">
+    <%= f.label :cube_root %><br>
+    <%= f.check_box :cube_root %>
+  </div>
+  <div class="field">
+    <%= f.label :factoring %><br>
+    <%= f.check_box :factoring %>
+  </div>
+  <div class="field">
+    <%= f.label :foil %><br>
+    <%= f.check_box :foil %>
+  </div>
+  <div class="field">
+    <%= f.label :variables %><br>
+    <%= f.check_box :variables %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_variables %><br>
+    <%= f.number_field :number_of_variables %>
+  </div>
+  <div class="field">
+    <%= f.label :imaginary_number %><br>
+    <%= f.check_box :imaginary_number %>
+  </div>
+  <div class="field">
+    <%= f.label :degree %><br>
+    <%= f.check_box :degree %>
+  </div>
+  <div class="field">
+    <%= f.label :radian %><br>
+    <%= f.check_box :radian %>
+  </div>
+  <div class="field">
+    <%= f.label :trigonometry %><br>
+    <%= f.check_box :trigonometry %>
+  </div>
+  <div class="field">
+    <%= f.label :sin %><br>
+    <%= f.check_box :sin %>
+  </div>
+  <div class="field">
+    <%= f.label :cos %><br>
+    <%= f.check_box :cos %>
+  </div>
+  <div class="field">
+    <%= f.label :tan %><br>
+    <%= f.check_box :tan %>
+  </div>
+  <div class="field">
+    <%= f.label :csc %><br>
+    <%= f.check_box :csc %>
+  </div>
+  <div class="field">
+    <%= f.label :sec %><br>
+    <%= f.check_box :sec %>
+  </div>
+  <div class="field">
+    <%= f.label :cot %><br>
+    <%= f.check_box :cot %>
+  </div>
+  <div class="field">
+    <%= f.label :arcsin %><br>
+    <%= f.check_box :arcsin %>
+  </div>
+  <div class="field">
+    <%= f.label :arccos %><br>
+    <%= f.check_box :arccos %>
+  </div>
+  <div class="field">
+    <%= f.label :arctan %><br>
+    <%= f.check_box :arctan %>
+  </div>
+  <div class="field">
+    <%= f.label :arccsc %><br>
+    <%= f.check_box :arccsc %>
+  </div>
+  <div class="field">
+    <%= f.label :arcsec %><br>
+    <%= f.check_box :arcsec %>
+  </div>
+  <div class="field">
+    <%= f.label :arccot %><br>
+    <%= f.check_box :arccot %>
+  </div>
+  <div class="field">
+    <%= f.label :simple_shapes_area %><br>
+    <%= f.check_box :simple_shapes_area %>
+  </div>
+  <div class="field">
+    <%= f.label :simple_shapes_circumference %><br>
+    <%= f.check_box :simple_shapes_circumference %>
+  </div>
+  <div class="field">
+    <%= f.label :simple_shapes_volume %><br>
+    <%= f.check_box :simple_shapes_volume %>
+  </div>
+  <div class="field">
+    <%= f.label :combination_shapes_area %><br>
+    <%= f.check_box :combination_shapes_area %>
+  </div>
+  <div class="field">
+    <%= f.label :combination_shapes_circumference %><br>
+    <%= f.check_box :combination_shapes_circumference %>
+  </div>
+  <div class="field">
+    <%= f.label :combination_shapes_volume %><br>
+    <%= f.check_box :combination_shapes_volume %>
+  </div>
+  <div class="field">
+    <%= f.label :ratios %><br>
+    <%= f.check_box :ratios %>
+  </div>
+  <div class="field">
+    <%= f.label :functions %><br>
+    <%= f.check_box :functions %>
+  </div>
+  <div class="field">
+    <%= f.label :equation %><br>
+    <%= f.check_box :equation %>
+  </div>
+  <div class="field">
+    <%= f.label :inequality %><br>
+    <%= f.check_box :inequality %>
+  </div>
+  <div class="field">
+    <%= f.label :plotting %><br>
+    <%= f.check_box :plotting %>
+  </div>
+  <div class="field">
+    <%= f.label :graph %><br>
+    <%= f.check_box :graph %>
+  </div>
+  <div class="field">
+    <%= f.label :slope %><br>
+    <%= f.check_box :slope %>
+  </div>
+  <div class="field">
+    <%= f.label :upper_bound %><br>
+    <%= f.text_field :upper_bound %>
+  </div>
+  <div class="field">
+    <%= f.label :lower_bound %><br>
+    <%= f.text_field :lower_bound %>
+  </div>
+  <div class="field">
+    <%= f.label :specialized %><br>
+    <%= f.text_field :specialized %>
+  </div>
+  <div class="field">
+    <%= f.label :short_description %><br>
+    <%= f.text_area :short_description %>
+  </div>
+  <div class="field">
+    <%= f.label :the_question %><br>
+    <%= f.text_area :the_question %>
+  </div>
+  <div class="field">
+    <%= f.label :answer %><br>
+    <%= f.text_area :answer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+-->
+
+<%= form_for(@question) do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author, :value => current_user.username, :readonly => true%><br>
+    <%= f.label :suggested_grade %><br>
+    <%= f.number_field :suggested_grade %><br>
+    <%= f.label :specialized %><br>
+    <%= f.text_field :specialized %><br>
+    <%= f.label :short_description %><br>
+    <%= f.text_area :short_description %><br>
+    <%= f.label :the_question %><br>
+    <%= f.text_area :the_question %><br>
+    <%= f.label :answer %><br>
+    <%= f.text_area :answer %><br>
+  	<div class="actions">
+		<%= f.submit %>
+	</div>
+</div>
+
+<table id="question_table">
+	<col width="150">
+	<col width="150">
+	<col width="150">
+	<col width="150">
+	<col width="150">
+	<tr>
+		<th>Notation</th>
+		<th>Operation</th>
+		<th>Question Type</th>
+		<th>Algebra</th>
+		<th>Geometry</th>
+		<th>Trigonometry</th>
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :integer %> 
+			<%= f.check_box :integer %>
+		</th>
+		<th>
+			<%= f.label :arithmetic %>
+			<%= f.check_box :arithmetic %>
+		</th>
+		<th>
+			<%= f.label :reading %> 
+			<%= f.check_box :reading %>
+		</th>
+		<th>
+			<%= f.label :variables %> 
+			<%= f.check_box :variables %>
+		</th>
+		<th>
+			<%= f.label :simple_shapes_area %> 
+			<%= f.check_box :simple_shapes_area %>
+		</th>
+		<th>
+			<%= f.label :trigonometry %> 
+			<%= f.check_box :trigonometry %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :decimal %> 
+			<%= f.check_box :decimal %>
+		</th>
+		<th>
+			<%= f.label :addition %>
+		    <%= f.check_box :addition %>
+		</th>
+		<th>
+			<%= f.label :trick_question %> 
+			<%= f.check_box :trick_question %>
+		</th>
+		<th>
+			<%= f.label :vumber_of_variables %> 
+			<%= f.number_field :number_of_variables %>
+		</th>
+		<th>
+			<%= f.label :simple_shapes_circumference %> 
+			<%= f.check_box :simple_shapes_circumference %>
+		</th>
+		<th>
+			<%= f.label :degree %> 
+			<%= f.check_box :degree %>
+		</th>
+		
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :number_of_decimals %> 
+			<%= f.number_field :number_of_decimals %>
+		</th>
+		<th>
+			<%= f.label :subtraction %> 
+	    	<%= f.check_box :subtraction %>
+		</th>
+		<th>
+			<%= f.label :multiple_choices %> 
+			<%= f.check_box :multiple_choices %>
+		</th>
+		<th>
+			<%= f.label :imaginary_number %> 
+			<%= f.check_box :imaginary_number %>
+		</th>
+		<th>
+			<%= f.label :simple_shapes_volume %> 
+			<%= f.check_box :simple_shapes_volume %>
+		</th>
+		<th>
+			<%= f.label :radian %> 
+			<%= f.check_box :radian %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :fraction %> 
+			<%= f.check_box :fraction %>
+		</th>
+		<th>
+			<%= f.label :multiplication %> 
+	    	<%= f.check_box :multiplication %>
+		</th>
+		<th>
+			<%= f.label :multiple_choice_answer %> 
+			<%= f.text_field :multiple_choice_answer %>
+		</th>
+		<th>
+			<%= f.label :ratios %> 
+			<%= f.check_box :ratios %>
+		</th>
+		<th>
+			<%= f.label :combination_shapes_area %> 
+			<%= f.check_box :combination_shapes_area %>
+		</th>
+		<th>
+			<%= f.label :sin %> 
+			<%= f.check_box :sin %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :fraction_to_decimal %> 
+			<%= f.check_box :fraction_to_decimal %>
+		</th>
+		<th>
+			<%= f.label :division %> 
+			<%= f.check_box :division %>
+		</th>
+		<th>
+			<%= f.label :word_problem %> 
+			<%= f.check_box :word_problem %>
+		</th>
+		<th>
+			<%= f.label :functions %> 
+			<%= f.check_box :functions %>
+		</th>
+		<th>
+			<%= f.label :combination_shapes_circumference %> 
+			<%= f.check_box :combination_shapes_circumference %>
+		</th>
+		<th>
+			<%= f.label :cos %> 
+			<%= f.check_box :cos %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :decimal_to_fraction %> 
+			<%= f.check_box :decimal_to_fraction %>
+		</th>
+		<th>
+			<%= f.label :long_division %> 
+			<%= f.check_box :long_division %>
+		</th>
+		<th>
+			<%= f.label :word_problem_solution_equation, "Solution Equation" %> 
+			<%= f.text_area :word_problem_solution_equation, :size => "16 x 1" %>
+		</th>
+		<th>
+			<%= f.label :equation %> 
+			<%= f.check_box :equation %>
+		</th>
+		<th>
+			<%= f.label :combination_shapes_volume %> 
+			<%= f.check_box :combination_shapes_volume %>
+		</th>
+		<th>
+			<%= f.label :tan %> 
+			<%= f.check_box :tan %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :significant_digits %> 
+			<%= f.number_field :significant_digits %>
+		</th>
+		<th>
+			<%= f.label :roots %> 
+			<%= f.check_box :roots %>
+		</th>
+		<th>
+			<%= f.label :parenthesis %> 
+			<%= f.check_box :parenthesis %>
+		</th>
+		<th>
+			<%= f.label :inequality %> 
+			<%= f.check_box :inequality %>
+		</th>
+		<th>
+			<%= f.label :plotting %> 
+			<%= f.check_box :plotting %>
+		</th>
+		<th>
+			<%= f.label :csc %> 
+			<%= f.check_box :csc %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :scientific_notation %> 
+			<%= f.check_box :scientific_notation %>
+		</th>
+		<th>
+			<%= f.label :square_root %> 
+			<%= f.check_box :square_root %>
+		</th>
+		<th>
+			<%= f.label :ractoring %> 
+			<%= f.check_box :factoring %>
+		</th>
+		<th></th>
+		<th>
+			<%= f.label :graph %> 
+			<%= f.check_box :graph %>
+		</th>
+		<th>
+			<%= f.label :sec %> 
+			<%= f.check_box :sec %>
+		</th>
+	</tr>
+	<tr height="40">
+		
+		<th>
+			<%= f.label :upper_bound %>
+    		<%= f.text_field :upper_bound %>
+		</th>
+		<th>
+			<%= f.label :cube_root %> 
+			<%= f.check_box :cube_root %>
+		</th>
+		<th>
+			<%= f.label :foil %> 
+			<%= f.check_box :foil %>
+		</th>
+		<th></th>
+		<th>
+			<%= f.label :slope %> 
+			<%= f.check_box :slope %>
+		</th>
+		<th>
+			<%= f.label :cot %> 
+			<%= f.check_box :cot %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th>
+			<%= f.label :lower_bound %>
+    		<%= f.text_field :lower_bound %>
+		</th>
+		<th>
+			<%= f.label :exponent %> 
+			<%= f.check_box :exponent %>
+		</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>
+			<%= f.label :arcsin %> 
+			<%= f.check_box :arcsin %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>
+			<%= f.label :arccos %> 
+			<%= f.check_box :arccos %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>
+			<%= f.label :arctan %> 
+			<%= f.check_box :arctan %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>
+			<%= f.label :arccsc %> 
+			<%= f.check_box :arccsc %>
+		</th>
+	</tr>
+	<tr height="40">
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>
+			<%= f.label :arcsec %> 
+			<%= f.check_box :arcsec %>
+		</th>
+	</tr>	
+	<tr height="40">
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>
+			<%= f.label :arccot %> 
+			<%= f.check_box :arccot %>
+		</th>
+	</tr>
+</table>
+
+<% end %>

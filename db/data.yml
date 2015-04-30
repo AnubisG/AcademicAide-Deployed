@@ -1,0 +1,297 @@
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - username
+  - first_name
+  - last_name
+  - job_title
+  - description
+  - courses
+  records: 
+  - - 1
+    - brandonguo@hotmail.com
+    - "$2a$10$BqkQJKqbvh.3kvTIFCETauxEXg/d/i/TxL5FTp6fx4k.JifmLuUMW"
+    - 
+    - 
+    - 
+    - 9
+    - '2015-03-06 18:24:38.329593'
+    - '2015-03-06 00:31:08.189600'
+    - 68.187.217.31
+    - 68.187.217.31
+    - '2015-01-26 07:39:47.383493'
+    - '2015-03-28 02:55:29.134746'
+    - admin
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 2
+    - academic_aide@hotmail.com
+    - "$2a$10$O4wwoiQH07GAz2Z/GdVVB.MnWh.WTKQ8YpsRx0JJC3rC/l2Bozol6"
+    - 
+    - 
+    - '2015-04-11 14:05:15.644971'
+    - 4
+    - '2015-04-17 16:35:24.304246'
+    - '2015-04-11 14:05:46.568309'
+    - 140.232.185.27
+    - 66.87.124.152
+    - '2015-01-28 00:00:34.138667'
+    - '2015-04-17 16:35:24.312383'
+    - AcademicAideAdmin
+    - 
+    - 
+    - 
+    - 
+    - 
+
+---
+question_comments:
+  columns:
+  - id
+  - author
+  - question_id
+  - text
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - admin
+    - 1
+    - good
+    - '2015-03-07 08:08:06.172797'
+    - '2015-03-07 08:08:06.172797'
+  - - 2
+    - admin
+    - 1
+    - very very good!!!!
+    - '2015-03-07 08:08:19.327548'
+    - '2015-03-07 08:08:19.327548'
+
+---
+questions:
+  columns:
+  - id
+  - author
+  - suggested_grade
+  - arithmetic
+  - addition
+  - subtraction
+  - multiplication
+  - division
+  - long_division
+  - reading
+  - trick_question
+  - multiple_choices
+  - multiple_choice_answer
+  - word_problem
+  - word_problem_solution_equation
+  - integer
+  - decimal
+  - number_of_decimals
+  - fraction
+  - fraction_to_decimal
+  - decimal_to_fraction
+  - significant_digits
+  - scientific_notation
+  - parenthesis
+  - exponent
+  - roots
+  - square_root
+  - cube_root
+  - factoring
+  - foil
+  - variables
+  - number_of_variables
+  - imaginary_number
+  - degree
+  - radian
+  - trigonometry
+  - sin
+  - cos
+  - tan
+  - csc
+  - sec
+  - cot
+  - arcsin
+  - arccos
+  - arctan
+  - arccsc
+  - arcsec
+  - arccot
+  - simple_shapes_area
+  - simple_shapes_circumference
+  - simple_shapes_volume
+  - combination_shapes_area
+  - combination_shapes_circumference
+  - combination_shapes_volume
+  - ratios
+  - functions
+  - equation
+  - inequality
+  - plotting
+  - graph
+  - slope
+  - upper_bound
+  - lower_bound
+  - specialized
+  - short_description
+  - the_question
+  - answer
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - admin
+    - 
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - ''
+    - false
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - false
+    - false
+    - 
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - 
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - ''
+    - ''
+    - ''
+    - ''
+    - "(2+3)^6*(4-2)"
+    - ''
+    - '2015-03-07 08:06:45.200161'
+    - '2015-03-07 08:06:45.200161'
+  - - 2
+    - AcademicAideAdmin
+    - 
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - ''
+    - false
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - false
+    - false
+    - 
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - 
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - ''
+    - ''
+    - ''
+    - ''
+    - 2+2
+    - '4'
+    - '2015-04-17 16:40:15.618044'
+    - '2015-04-17 16:40:15.618044'

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Academicaide</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= mathjax_tag %>
+</head>
+<body>
+
+	<div class="header">
+
+		<h1 class="navBar" id="logo" onclick="window.location='http://www.academicaide.com'">Academic Aide</h1>
+
+		<p class="navBar" id="explore" onclick="window.location='http://www.academicaide.com'">Explore</p>
+
+		<p class="navBar" id="about-us" onclick="window.location='http://www.academicaide.com/home/AboutUs'">About Us</p>
+
+		<!--
+
+		<input class="navBar" id="search-bar" type='text' name='search-bar' value='Search your topics' style="color: #FFE4E1">
+
+		<button class="navBar" id="search-button">Search</button>
+
+		-->
+
+	</div>
+
+	
+
+	<%= yield %>
+
+	
+
+	
+
+
+
+	<div class="footer">
+
+		<hr style="height:5px;">
+
+			<a onclick="window.location='http://www.academicaide.com/home/contact'">Contact Us</a>
+
+			 |  
+
+			<a>Academic Aide</a>
+
+			 |  
+
+			<a>Terms and Conditions of Use</a>
+
+			 |  
+
+			<a>Last Updated on: 3/5/2015</a>
+
+	</div>
+
+</body>
+</html>
