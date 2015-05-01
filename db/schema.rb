@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126065735) do
+ActiveRecord::Schema.define(version: 20150501032757) do
+
+  create_table "c_on_ws", force: :cascade do |t|
+    t.integer  "worksheet_id", limit: 4
+    t.integer  "course_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "c_un_cos", force: :cascade do |t|
+    t.integer  "course_id",     limit: 4
+    t.integer  "curriculum_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "course_comments", force: :cascade do |t|
     t.string   "author",     limit: 255
@@ -60,6 +74,13 @@ ActiveRecord::Schema.define(version: 20150126065735) do
     t.string   "class_id",        limit: 255
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+  end
+
+  create_table "qn_ws", force: :cascade do |t|
+    t.integer  "question_id",  limit: 4
+    t.integer  "worksheet_id", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "question_comments", force: :cascade do |t|
