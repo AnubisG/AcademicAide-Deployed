@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class COnWsTest < ActiveSupport::TestCase
+class CourseandcurriculumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

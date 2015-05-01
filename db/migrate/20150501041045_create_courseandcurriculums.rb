@@ -1,6 +1,6 @@
-class CreateCUnCos < ActiveRecord::Migration
+class CreateCourseandcurriculums < ActiveRecord::Migration
   def change
-    create_table :c_un_cos do |t|
+    create_table :courseandcurriculums do |t|
       t.integer :course_id
       t.integer :curriculum_id
 

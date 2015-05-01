@@ -1,6 +1,6 @@
-class CreateCOnWs < ActiveRecord::Migration
+class CreateWorksheetandcourses < ActiveRecord::Migration
   def change
-    create_table :c_on_ws do |t|
+    create_table :worksheetandcourses do |t|
       t.integer :worksheet_id
       t.integer :course_id
 

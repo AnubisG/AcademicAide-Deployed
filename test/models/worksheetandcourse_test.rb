@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CUnCoTest < ActiveSupport::TestCase
+class WorksheetandcourseTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
