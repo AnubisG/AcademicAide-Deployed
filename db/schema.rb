@@ -11,240 +11,290 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126065735) do
+ActiveRecord::Schema.define(version: 20150501071945) do
+
+  create_table "c_on_ws", force: :cascade do |t|
+    t.integer  "worksheet_id", limit: 4
+    t.integer  "course_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "c_un_cos", force: :cascade do |t|
+    t.integer  "course_id",     limit: 4
+    t.integer  "curriculum_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "course_comments", force: :cascade do |t|
-    t.string   "author"
-    t.integer  "course_id"
-    t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "author",     limit: 255
+    t.integer  "course_id",  limit: 4
+    t.text     "text",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "courseandcurriculums", force: :cascade do |t|
+    t.integer  "course_id",     limit: 4
+    t.integer  "curriculum_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string   "class_id"
-    t.string   "teacher"
-    t.text     "students"
-    t.string   "course_name"
-    t.text     "class_description"
-    t.string   "corresponding_course"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "class_id",             limit: 255
+    t.string   "teacher",              limit: 255
+    t.text     "students",             limit: 65535
+    t.string   "course_name",          limit: 255
+    t.text     "class_description",    limit: 65535
+    t.string   "corresponding_course", limit: 255
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "curriculums", force: :cascade do |t|
-    t.string   "author"
-    t.text     "course_description"
-    t.text     "syllabus"
-    t.text     "worksheets"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "author",             limit: 255
+    t.text     "course_description", limit: 65535
+    t.text     "syllabus",           limit: 65535
+    t.text     "worksheets",         limit: 65535
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "general_comments", force: :cascade do |t|
-    t.string   "author"
-    t.integer  "comment_id"
-    t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "author",     limit: 255
+    t.integer  "comment_id", limit: 4
+    t.text     "text",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "hw_records", force: :cascade do |t|
-    t.string   "worksheet"
-    t.text     "questions"
-    t.text     "student_answers"
-    t.string   "students_name"
-    t.string   "completeness"
-    t.string   "grade"
-    t.text     "grader_comments"
-    t.string   "class_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "worksheet",       limit: 255
+    t.text     "questions",       limit: 65535
+    t.text     "student_answers", limit: 65535
+    t.string   "students_name",   limit: 255
+    t.string   "completeness",    limit: 255
+    t.string   "grade",           limit: 255
+    t.text     "grader_comments", limit: 65535
+    t.string   "class_id",        limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "qn_ws", force: :cascade do |t|
+    t.integer  "question_id",  limit: 4
+    t.integer  "worksheet_id", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "quesetionandworksheets", force: :cascade do |t|
+    t.integer  "question_id",  limit: 4
+    t.integer  "worksheet_id", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "question_comments", force: :cascade do |t|
-    t.string   "author"
-    t.integer  "question_id"
-    t.text     "text"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "author",      limit: 255
+    t.integer  "question_id", limit: 4
+    t.text     "text",        limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string   "author"
-    t.integer  "suggested_grade"
-    t.boolean  "arithmetic"
-    t.boolean  "addition"
-    t.boolean  "subtraction"
-    t.boolean  "multiplication"
-    t.boolean  "division"
-    t.boolean  "long_division"
-    t.boolean  "reading"
-    t.boolean  "trick_question"
-    t.boolean  "multiple_choices"
-    t.string   "multiple_choice_answer"
-    t.boolean  "word_problem"
-    t.text     "word_problem_solution_equation"
-    t.boolean  "integer"
-    t.boolean  "decimal"
-    t.integer  "number_of_decimals"
-    t.boolean  "fraction"
-    t.boolean  "fraction_to_decimal"
-    t.boolean  "decimal_to_fraction"
-    t.integer  "significant_digits"
-    t.boolean  "scientific_notation"
-    t.boolean  "parenthesis"
-    t.boolean  "exponent"
-    t.boolean  "roots"
-    t.boolean  "square_root"
-    t.boolean  "cube_root"
-    t.boolean  "factoring"
-    t.boolean  "foil"
-    t.boolean  "variables"
-    t.integer  "number_of_variables"
-    t.boolean  "imaginary_number"
-    t.boolean  "degree"
-    t.boolean  "radian"
-    t.boolean  "trigonometry"
-    t.boolean  "sin"
-    t.boolean  "cos"
-    t.boolean  "tan"
-    t.boolean  "csc"
-    t.boolean  "sec"
-    t.boolean  "cot"
-    t.boolean  "arcsin"
-    t.boolean  "arccos"
-    t.boolean  "arctan"
-    t.boolean  "arccsc"
-    t.boolean  "arcsec"
-    t.boolean  "arccot"
-    t.boolean  "simple_shapes_area"
-    t.boolean  "simple_shapes_circumference"
-    t.boolean  "simple_shapes_volume"
-    t.boolean  "combination_shapes_area"
-    t.boolean  "combination_shapes_circumference"
-    t.boolean  "combination_shapes_volume"
-    t.boolean  "ratios"
-    t.boolean  "functions"
-    t.boolean  "equation"
-    t.boolean  "inequality"
-    t.boolean  "plotting"
-    t.boolean  "graph"
-    t.boolean  "slope"
-    t.string   "upper_bound"
-    t.string   "lower_bound"
-    t.string   "specialized"
-    t.text     "short_description"
-    t.text     "the_question"
-    t.text     "answer"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.string   "author",                           limit: 255
+    t.integer  "suggested_grade",                  limit: 4
+    t.boolean  "arithmetic",                       limit: 1
+    t.boolean  "addition",                         limit: 1
+    t.boolean  "subtraction",                      limit: 1
+    t.boolean  "multiplication",                   limit: 1
+    t.boolean  "division",                         limit: 1
+    t.boolean  "long_division",                    limit: 1
+    t.boolean  "reading",                          limit: 1
+    t.boolean  "trick_question",                   limit: 1
+    t.boolean  "multiple_choices",                 limit: 1
+    t.string   "multiple_choice_answer",           limit: 255
+    t.boolean  "word_problem",                     limit: 1
+    t.text     "word_problem_solution_equation",   limit: 65535
+    t.boolean  "integer",                          limit: 1
+    t.boolean  "decimal",                          limit: 1
+    t.integer  "number_of_decimals",               limit: 4
+    t.boolean  "fraction",                         limit: 1
+    t.boolean  "fraction_to_decimal",              limit: 1
+    t.boolean  "decimal_to_fraction",              limit: 1
+    t.integer  "significant_digits",               limit: 4
+    t.boolean  "scientific_notation",              limit: 1
+    t.boolean  "parenthesis",                      limit: 1
+    t.boolean  "exponent",                         limit: 1
+    t.boolean  "roots",                            limit: 1
+    t.boolean  "square_root",                      limit: 1
+    t.boolean  "cube_root",                        limit: 1
+    t.boolean  "factoring",                        limit: 1
+    t.boolean  "foil",                             limit: 1
+    t.boolean  "variables",                        limit: 1
+    t.integer  "number_of_variables",              limit: 4
+    t.boolean  "imaginary_number",                 limit: 1
+    t.boolean  "degree",                           limit: 1
+    t.boolean  "radian",                           limit: 1
+    t.boolean  "trigonometry",                     limit: 1
+    t.boolean  "sin",                              limit: 1
+    t.boolean  "cos",                              limit: 1
+    t.boolean  "tan",                              limit: 1
+    t.boolean  "csc",                              limit: 1
+    t.boolean  "sec",                              limit: 1
+    t.boolean  "cot",                              limit: 1
+    t.boolean  "arcsin",                           limit: 1
+    t.boolean  "arccos",                           limit: 1
+    t.boolean  "arctan",                           limit: 1
+    t.boolean  "arccsc",                           limit: 1
+    t.boolean  "arcsec",                           limit: 1
+    t.boolean  "arccot",                           limit: 1
+    t.boolean  "simple_shapes_area",               limit: 1
+    t.boolean  "simple_shapes_circumference",      limit: 1
+    t.boolean  "simple_shapes_volume",             limit: 1
+    t.boolean  "combination_shapes_area",          limit: 1
+    t.boolean  "combination_shapes_circumference", limit: 1
+    t.boolean  "combination_shapes_volume",        limit: 1
+    t.boolean  "ratios",                           limit: 1
+    t.boolean  "functions",                        limit: 1
+    t.boolean  "equation",                         limit: 1
+    t.boolean  "inequality",                       limit: 1
+    t.boolean  "plotting",                         limit: 1
+    t.boolean  "graph",                            limit: 1
+    t.boolean  "slope",                            limit: 1
+    t.string   "upper_bound",                      limit: 255
+    t.string   "lower_bound",                      limit: 255
+    t.string   "specialized",                      limit: 255
+    t.text     "short_description",                limit: 65535
+    t.text     "the_question",                     limit: 65535
+    t.text     "answer",                           limit: 65535
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
+
+  create_table "questions_worksheets", id: false, force: :cascade do |t|
+    t.integer "question_id",  limit: 4, null: false
+    t.integer "worksheet_id", limit: 4, null: false
+  end
+
+  add_index "questions_worksheets", ["question_id", "worksheet_id"], name: "index_questions_worksheets_on_question_id_and_worksheet_id", using: :btree
+  add_index "questions_worksheets", ["worksheet_id", "question_id"], name: "index_questions_worksheets_on_worksheet_id_and_question_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255,   default: "", null: false
+    t.string   "encrypted_password",     limit: 255,   default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "job_title"
-    t.string   "description"
-    t.text     "courses"
+    t.string   "username",               limit: 255
+    t.string   "first_name",             limit: 255
+    t.string   "last_name",              limit: 255
+    t.string   "job_title",              limit: 255
+    t.string   "description",            limit: 255
+    t.text     "courses",                limit: 65535
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   create_table "worksheet_comments", force: :cascade do |t|
-    t.string   "author"
-    t.integer  "worksheet_id"
-    t.text     "text"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "author",       limit: 255
+    t.integer  "worksheet_id", limit: 4
+    t.text     "text",         limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "worksheetandcourses", force: :cascade do |t|
+    t.integer  "worksheet_id", limit: 4
+    t.integer  "course_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "worksheets", force: :cascade do |t|
-    t.string   "author"
-    t.text     "description"
-    t.string   "worksheet_name"
-    t.integer  "suggested_grade"
-    t.boolean  "arithmetic"
-    t.boolean  "addition"
-    t.boolean  "subtraction"
-    t.boolean  "multiplication"
-    t.boolean  "division"
-    t.boolean  "long_division"
-    t.boolean  "reading"
-    t.boolean  "trick_question"
-    t.boolean  "multiple_choices"
-    t.string   "multiple_choice_answer"
-    t.boolean  "word_problem"
-    t.text     "word_problem_solution_equation"
-    t.boolean  "integer"
-    t.boolean  "decimal"
-    t.integer  "number_of_decimals"
-    t.boolean  "fraction"
-    t.boolean  "fraction_to_decimal"
-    t.boolean  "decimal_to_fraction"
-    t.integer  "significant_digits"
-    t.boolean  "scientific_notation"
-    t.boolean  "parenthesis"
-    t.boolean  "exponent"
-    t.boolean  "roots"
-    t.boolean  "square_root"
-    t.boolean  "cube_root"
-    t.boolean  "factoring"
-    t.boolean  "foil"
-    t.boolean  "variables"
-    t.integer  "number_of_variables"
-    t.boolean  "imaginary_number"
-    t.boolean  "degree"
-    t.boolean  "radian"
-    t.boolean  "trigonometry"
-    t.boolean  "sin"
-    t.boolean  "cos"
-    t.boolean  "tan"
-    t.boolean  "csc"
-    t.boolean  "sec"
-    t.boolean  "cot"
-    t.boolean  "arcsin"
-    t.boolean  "arccos"
-    t.boolean  "arctan"
-    t.boolean  "arccsc"
-    t.boolean  "arcsec"
-    t.boolean  "arccot"
-    t.boolean  "simple_shapes_area"
-    t.boolean  "simple_shapes_circumference"
-    t.boolean  "simple_shapes_volume"
-    t.boolean  "combination_shapes_area"
-    t.boolean  "combination_shapes_circumference"
-    t.boolean  "combination_shapes_volume"
-    t.boolean  "ratios"
-    t.boolean  "functions"
-    t.boolean  "equation"
-    t.boolean  "inequality"
-    t.boolean  "plotting"
-    t.boolean  "graph"
-    t.boolean  "slope"
-    t.string   "upper_bound"
-    t.string   "lower_bound"
-    t.text     "questions"
-    t.text     "answers"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.string   "author",                           limit: 255
+    t.text     "description",                      limit: 65535
+    t.string   "worksheet_name",                   limit: 255
+    t.integer  "suggested_grade",                  limit: 4
+    t.boolean  "arithmetic",                       limit: 1
+    t.boolean  "addition",                         limit: 1
+    t.boolean  "subtraction",                      limit: 1
+    t.boolean  "multiplication",                   limit: 1
+    t.boolean  "division",                         limit: 1
+    t.boolean  "long_division",                    limit: 1
+    t.boolean  "reading",                          limit: 1
+    t.boolean  "trick_question",                   limit: 1
+    t.boolean  "multiple_choices",                 limit: 1
+    t.string   "multiple_choice_answer",           limit: 255
+    t.boolean  "word_problem",                     limit: 1
+    t.text     "word_problem_solution_equation",   limit: 65535
+    t.boolean  "integer",                          limit: 1
+    t.boolean  "decimal",                          limit: 1
+    t.integer  "number_of_decimals",               limit: 4
+    t.boolean  "fraction",                         limit: 1
+    t.boolean  "fraction_to_decimal",              limit: 1
+    t.boolean  "decimal_to_fraction",              limit: 1
+    t.integer  "significant_digits",               limit: 4
+    t.boolean  "scientific_notation",              limit: 1
+    t.boolean  "parenthesis",                      limit: 1
+    t.boolean  "exponent",                         limit: 1
+    t.boolean  "roots",                            limit: 1
+    t.boolean  "square_root",                      limit: 1
+    t.boolean  "cube_root",                        limit: 1
+    t.boolean  "factoring",                        limit: 1
+    t.boolean  "foil",                             limit: 1
+    t.boolean  "variables",                        limit: 1
+    t.integer  "number_of_variables",              limit: 4
+    t.boolean  "imaginary_number",                 limit: 1
+    t.boolean  "degree",                           limit: 1
+    t.boolean  "radian",                           limit: 1
+    t.boolean  "trigonometry",                     limit: 1
+    t.boolean  "sin",                              limit: 1
+    t.boolean  "cos",                              limit: 1
+    t.boolean  "tan",                              limit: 1
+    t.boolean  "csc",                              limit: 1
+    t.boolean  "sec",                              limit: 1
+    t.boolean  "cot",                              limit: 1
+    t.boolean  "arcsin",                           limit: 1
+    t.boolean  "arccos",                           limit: 1
+    t.boolean  "arctan",                           limit: 1
+    t.boolean  "arccsc",                           limit: 1
+    t.boolean  "arcsec",                           limit: 1
+    t.boolean  "arccot",                           limit: 1
+    t.boolean  "simple_shapes_area",               limit: 1
+    t.boolean  "simple_shapes_circumference",      limit: 1
+    t.boolean  "simple_shapes_volume",             limit: 1
+    t.boolean  "combination_shapes_area",          limit: 1
+    t.boolean  "combination_shapes_circumference", limit: 1
+    t.boolean  "combination_shapes_volume",        limit: 1
+    t.boolean  "ratios",                           limit: 1
+    t.boolean  "functions",                        limit: 1
+    t.boolean  "equation",                         limit: 1
+    t.boolean  "inequality",                       limit: 1
+    t.boolean  "plotting",                         limit: 1
+    t.boolean  "graph",                            limit: 1
+    t.boolean  "slope",                            limit: 1
+    t.string   "upper_bound",                      limit: 255
+    t.string   "lower_bound",                      limit: 255
+    t.text     "questions",                        limit: 65535
+    t.text     "answers",                          limit: 65535
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
-  add_index "worksheets", ["worksheet_name"], name: "index_worksheets_on_worksheet_name", unique: true
+  add_index "worksheets", ["worksheet_name"], name: "index_worksheets_on_worksheet_name", unique: true, using: :btree
 
 end

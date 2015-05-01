@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
-  
-  get 'my/questions'
 
-  get 'my/worksheets'
-
-  get 'my/courses'
-
-  get 'question_comments/destory'
-  
   devise_for :users
 
   resources :questions do
@@ -32,18 +24,28 @@ Rails.application.routes.draw do
   
   get 'home/AboutUs'
   
-  get 'my/curriculum'
+  #get 'my/curriculum'
 
-  get 'my/question'
+  #get 'my/question'
 
-  get 'my/worksheet'
+  #get 'my/worksheet'
+  
+  get 'my/questions'
 
+  #get 'my/worksheets'
+
+  #get 'my/courses'
+
+  get 'question_comments/destory'
+  
   get 'question_comments/create'
 
   get 'question_comments/destroy'
   
-  root to: "home#index"
-  
+  devise_scope :user do
+    root to: "devise/sessions#new" 
+  end
+   
   mathjax 'mathjax'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
