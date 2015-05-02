@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'my/curriculums'
+
+  get 'my/worksheets'
+
+  get 'my/courses'
+
   devise_for :users
 
   resources :questions do

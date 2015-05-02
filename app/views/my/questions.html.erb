@@ -10,29 +10,16 @@
     </tr>
   </thead>
 
-<!--
-  <tbody>
-    <% @questions.each do |question| %>
-    	<% if (question.author) == (current_user.username) %>
-	      <tr>
-	        <td><%= question.author %></td>
-	        <td><%= question.suggested_grade %></td>
-	        <td>$$<%= question.the_question %>$$</td>
-	        <td><%= link_to 'Show', question %></td>
-	      </tr>
-	   <% end %>
-    <% end %>
-  </tbody>
- -->
   <tbody>
     <% @questions.each do |question| %>
       <tr>
         <td><%= question.author %></td>
         <td><%= question.suggested_grade %></td>
+        <td><%= question.specialized %></td> 
         <td>$$<%= question.the_question %>$$</td>
         <td><%= link_to 'Show', question %></td>
       </tr>
     <% end %>
   </tbody>
-  
+  <%= will_paginate @questions %>
 </table>
